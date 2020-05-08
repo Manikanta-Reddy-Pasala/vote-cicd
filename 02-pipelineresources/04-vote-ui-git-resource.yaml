@@ -6,4 +6,4 @@ spec:
   type: git
   params:
   - name: url
-    value: https://github.com/nikhil-thomas/vote-ui.git
+    value: https://github.com/Manikanta-Reddy-Pasala/vote-ui.git
