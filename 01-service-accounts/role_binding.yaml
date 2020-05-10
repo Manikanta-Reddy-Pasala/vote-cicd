@@ -1,0 +1,2 @@
+
+kubectl create clusterrolebinding  build-bot-binding --clusterrole=admin --serviceaccount=build-bot
