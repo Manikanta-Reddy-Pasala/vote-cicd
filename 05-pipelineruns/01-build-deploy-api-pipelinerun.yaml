@@ -3,6 +3,7 @@ kind: PipelineRun
 metadata:
   name: build-deploy-api-pipelinerun
 spec:
+  serviceAccountName: build-bot
   pipelineRef:
     name: build-and-deploy
   resources:

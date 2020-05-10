@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
   name: vote-cicd-triggertemplate
@@ -35,7 +35,7 @@ spec:
       type: image
       params:
       - name: url
-        value: image-registry.openshift-image-registry.svc:5000/vote-cicd/$(params.gitrepositoryname):latest
+        value: gcr.io/oneshell-210911/qa/$(params.gitrepositoryname):latest
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineRun
     metadata:

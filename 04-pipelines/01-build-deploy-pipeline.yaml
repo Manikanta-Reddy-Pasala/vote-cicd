@@ -15,8 +15,7 @@ spec:
   tasks:
   - name: build-image
     taskRef:
-      name: buildah-v0-8-0
-      kind: ClusterTask
+      name: kaniko
     resources:
       inputs:
       - name: source
@@ -25,16 +24,16 @@ spec:
       - name: image
         resource: my-image-resource
     params:
-    - name: TLSVERIFY
-      value: "false"
+      - name: EXTRA_ARGS
+        value: "--skip-tls-verify"
   - name: create-upate-deployment
     taskRef:
       name: oc-apply-deployment
     resources:
       inputs:
-      - name: k8s-yamls-repo
+      - name: repo-name
         resource: my-source-repo
-      - name: new-image
+      - name: image-name
         resource: my-image-resource
     params:
     - name: deployment-name
