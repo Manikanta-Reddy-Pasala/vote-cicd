@@ -6,4 +6,4 @@ spec:
   type: image
   params:
   - name: url
-    value: image-registry.openshift-image-registry.svc:5000/vote-cicd/vote-ui:latest
+    value: gcr.io/oneshell-210911/qa/vote-ui:latest
