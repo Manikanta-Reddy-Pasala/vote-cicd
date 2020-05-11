@@ -1,7 +1,7 @@
 
 notes:
 ------
-friday worked on web hook integration  for existing dev hub project again not able to proceed further because of some wierd issues. even dev build is pipeline is failing , markus also checked
+friday worked on web hook integration  for existing dev hub project again not able to proceed further because of some wierd issues that not able solve due to lack of overal knowledge. even dev build is pipeline is failing , markus also checked
 
 not able to fully understand all of our tasks steps, pipelines.. 
 
