@@ -1,12 +1,11 @@
 
 notes:
 ------
+friday worked on web hook integration  for existing dev hub project again not able to proceed further because of some wierd issues. even dev build is pipeline is failing , markus also checked
 
-i have tried to intrgrate directly triggers again not able to proceed further because of some wierd issues. even dev build is pipeline is failing , markus also checked
+not able to fully understand all of our tasks steps, pipelines.. 
 
-not able to understand all of it sudden our tasks steps, pipelines.. 
-
-so i wanted to understand basics before understanding our pipeline deployment setup,so decided to learn all steps on my own from scrach. 
+so i wanted to understand basics before understanding our deployment setup,so decided to learn all steps on my own from scrach. 
 
 	1) since i am comfotable with native kubernetes i have created 2 node kubernetes cluster
 	2) installed tekton, triggers
@@ -16,9 +15,7 @@ so i wanted to understand basics before understanding our pipeline deployment se
 	6) I am able to create build and push images to conainer registry, and able to deploy application on current namespace,
 	7) then created trigger templet, trigger bindings, EventListeners by creating new service account which has access to all trigger resources and API
 	8) i have created a route i.e. exposed service and get  URL which can be acceisible from outside world
-	9) added that URL in git hub repo, triggering happend after the commit process but failed due to "head_commit is not found" issue -- this we can solve.... 
-
-
+	9) added that exposed eventlistner URL in git hub repo, triggering happend after the commit process but failed due to "head_commit is not found" issue -- this we can solve.... 
 
 Eventlistener:
 -----------------
@@ -36,13 +33,11 @@ Triggertemplate:
 ------------------
 template for pipelineruns to be executed
 
-
 note:
 ------
 1) it requires single POD to run multiple webhook trigers, 4 pods for tekton (2 for tekton controller, webhook, 2 for triggers (controller, web hook))
 2) Unfortunately, EventListeners only support JSON bodies, for other formats we need to write interceptors.. in our case we no need to worry since git hub gives JSOn in case of slack or other tools we need to write.... 
 3) even webhook can be created manually also through yaml files...
-
 
 -----------------------------------------------
 
